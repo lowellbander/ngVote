@@ -9,5 +9,5 @@
 <h3>array JSON get test</h3>
 <ul>
 	<li ng-repeat="item in array">{{item}}</li>
-	<li ng-repeat="item in array">{{item.name}}</li>
+	<li ng-repeat="item in array" ng-click="item.count = item.count+1">{{item.name}}</li>
 </ul>

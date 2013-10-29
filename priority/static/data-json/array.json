@@ -1,7 +1,10 @@
 [{
-	"name" : "first"
+	"name" : "first",
+	"count" : 0
 },{
-	"name" : "second"
+	"name" : "second",
+	"count" : 0
 },{
-	"name" : "third"
+	"name" : "third",
+	"count" : 0
 }]
