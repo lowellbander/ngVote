@@ -4,7 +4,12 @@
 
 var controllers = angular.module('app.controllers', []);
 
-controllers.controller('VoteCtrl', ['$scope', '$http', 
+controllers.controller('VoteCtrl', ['$scope',
+    function ($scope) {
+        $scope.testval = "Sanity Check Complete"
+    }]);
+
+controllers.controller('LandingCtrl', ['$scope', '$http', 
     function ($scope, $http) {
         $scope.lowell = "test success!";
         $scope.subjects = [{

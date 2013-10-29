@@ -17,8 +17,8 @@ app.value('taskURI', '//jvillbrandt-ubuntu:8007');
 
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/open-tasks', {templateUrl: '/static/partials/open-tasks.html', controller: 'TaskCtrl'});
-    $routeProvider.when('/landing-page', {templateUrl: '/static/partials/landing-page.html', controller: 'VoteCtrl'});
-    $routeProvider.when('/vote/:id', {templateUrl: '/static/partials/vote.html', controller: 'VoteCtrl'});
+    $routeProvider.when('/landing-page', {templateUrl: '/static/partials/landing-page.html', controller: 'LandingCtrl'});
+    $routeProvider.when('/vote/:pollid', {templateUrl: '/static/partials/vote.html', controller: 'VoteCtrl'});
     $routeProvider.when('/closed-tasks', {templateUrl: '/static/partials/closed-tasks.html', controller: 'TaskCtrl'});
     $routeProvider.otherwise({redirectTo: '/landing-page'});
 }]);
