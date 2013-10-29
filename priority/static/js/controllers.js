@@ -18,11 +18,13 @@ controllers.controller('VoteCtrl', ['$scope', '$http', 'Choices',
             });
         $scope.vote = function(index) {
             $scope.array[index].count = $scope.array[index].count + 1;
+            //POST or PUT new count (probably the entire JSON obj tho)
         };
         // $scope.myData = Choices.get({}, function () {
 
         // });
-        $scope.myData = Choices.get();
+        // $scope.myData = Choices.get();
+        $scope.myData = Choices.query();
     }]);
 
 controllers.controller('LandingCtrl', ['$scope', '$http', 

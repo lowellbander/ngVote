@@ -18,9 +18,10 @@ var tastypieDataTransformer = function ($http) {
     ])
 };
 
-services.factory('Choices', function ($resource) {
-    return $resource('static/data-json/single-object.json');
-});
+services.factory('Choices', ['$resource',
+    function ($resource) {
+        return $resource('static/data-json/array.json');
+}]);
 
 services.factory('Task', ['$resource', '$log', '$http', 'taskURI',
     function($resource, $log, $http, taskURI) {
