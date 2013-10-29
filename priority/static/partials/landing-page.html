@@ -2,5 +2,5 @@
 <p>Little more? {{lowell}}</p>
 <h1>Vote:</h1>
 <ul>
-	<li ng-repeat="choice in choices">{{choice}}</li>
+	<li ng-repeat="subject in subjects"><a href="#/vote/:{{subject.id}}">{{subject.name}}</a></li>
 </ul>

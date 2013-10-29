@@ -4,9 +4,29 @@
 
 var controllers = angular.module('app.controllers', []);
 
-controllers.controller('VoteCtrl', ['$scope', function ($scope) {
+controllers.controller('VoteCtrl', ['$scope', '$http', 
+    function ($scope, $http) {
         $scope.lowell = "test success!";
-        $scope.choices = ['CS 31', 'CS 32', 'CS 33', 'CS 35L'];
+        $scope.subjects = [{
+            "id" : 0,
+            "name" : "Computer Science"
+        },
+        {
+            "id" : 1,
+            "name" : "Mathematics"
+        },{
+           "id" : 2,
+            "name" : "Physics" 
+        }];
+        $scope.getURL = function(subject) {
+            return "/vote/:" + subject.id;
+        };
+
+        // $scope.choices = ['CS 31', 'CS 32', 'CS 33', 'CS 35L'];
+        // $scope.choices = [];
+        // $http.get('/static/js/data.json').success(function(data) {
+        //     $scope.choices = data;
+        // });
     }]);
 
 controllers.controller('NavbarCtrl', ['$scope', '$http', '$location', 'Session',
