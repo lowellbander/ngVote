@@ -18,12 +18,15 @@ controllers.controller('VoteCtrl', ['$scope', '$http', 'Choices',
             });
         $scope.vote = function(index) {
             $scope.array[index].count = $scope.array[index].count + 1;
-            //POST or PUT new count (probably the entire JSON obj tho)
-        };
-        // $scope.myData = Choices.get({}, function () {
 
-        // });
-        // $scope.myData = Choices.get();
+            $scope.myData[index].count = $scope.myData[index].count + 1;
+            //POST or PUT new count (probably the entire JSON obj tho)
+            //save() the single object
+            Choices.save($scope.myData[index]); //doesn't work, need a server that serves the JSON
+            /*   POST http://0.0.0.0:8000/static/data-json/array.json 405 (METHOD NOT ALLOWED)    */
+
+            //get() the updated object (necessary?)
+        };
         $scope.myData = Choices.query();
     }]);
 
@@ -44,13 +47,11 @@ controllers.controller('LandingCtrl', ['$scope', '$http',
         $scope.getURL = function(subject) {
             return "/vote/:" + subject.id;
         };
-
-        // $scope.choices = ['CS 31', 'CS 32', 'CS 33', 'CS 35L'];
-        // $scope.choices = [];
-        // $http.get('/static/js/data.json').success(function(data) {
-        //     $scope.choices = data;
-        // });
     }]);
+
+/////////////////////////////////
+// Vestigial Beyond This Point //
+/////////////////////////////////
 
 controllers.controller('NavbarCtrl', ['$scope', '$http', '$location', 'Session',
     function ($scope, $http, $location, Session) {
@@ -68,66 +69,6 @@ controllers.controller('NavbarCtrl', ['$scope', '$http', '$location', 'Session',
             return $http.pendingRequests.length > 0;
         };
     }]);
-
-controllers.controller('TaskCtrl', ['$scope', '$log', '$modal', 'Task', 'Session',
-    function($scope, $log, $modal, Task, Session) {
-        // testing single Task
-        Task.get({taskID: 1}, function(task) {
-            $log.log('single...');
-            $log.log(task);
-        });
-
-        $scope.priority = 5;
-        $scope.tasks = Task.all({}, function(data) {
-            $log.log('all...', data);
-        });
-
-        $scope.open = function (taskID) {
-            var task = {id: 'new', name:'', uid: null, position: null, completed: false}
-            if(taskID != 'new') {
-                //todo
-            }
-
-            var modalInstance = $modal.open({
-                templateUrl: '/static/partials/edit-task.html',
-                controller: ModalInstanceCtrl,
-                resolve: {
-                    task: function () {
-                        return task;
-                    }
-                }
-            });
-
-            modalInstance.result.then(function (task) {
-                task.position = $scope.tasks.length + 1;
-                $log.log(task);
-                $scope.tasks.push(task);
-            }, function () {
-                $log.info('Modal dismissed at: ' + new Date());
-            });
-        };
-    }]);
-
-/*angular.module('app.controllers', []).
-    controller('EditTaskModalCtrl', ['$scope', '$modalInstance', 'task',
-    function($scope, $modalInstance, task) {
-
-        $scope.task = task;
-        $scope.selected = {
-            item: task
-        };
-
-        $scope.ok = function () {
-            $modalInstance.close(task);
-        };
-
-        $scope.cancel = function () {
-            $modalInstance.dismiss('cancel');
-        };
-
-    }]);*/
-
-
 
 var ModalInstanceCtrl = function ($scope, $modalInstance, task) {
     $scope.task = task;

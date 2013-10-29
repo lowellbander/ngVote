@@ -22,15 +22,3 @@ services.factory('Choices', ['$resource',
     function ($resource) {
         return $resource('static/data-json/array.json');
 }]);
-
-services.factory('Task', ['$resource', '$log', '$http', 'taskURI',
-    function($resource, $log, $http, taskURI) {
-        return $resource(taskURI+'/api/dev/task/:taskID?format=json',
-            {taskID:'@id'}, {
-                all: {
-                    method: 'GET',
-                    isArray: true,
-                    transformResponse: tastypieDataTransformer($http)
-                }
-            });
-    }]);
