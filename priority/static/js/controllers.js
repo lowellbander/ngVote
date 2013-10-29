@@ -12,6 +12,10 @@ controllers.controller('VoteCtrl', ['$scope', '$http',
             function(data) {
                 $scope.testObj = data;
             });
+        $http.get('static/data-json/array.json').success(
+            function(data) {
+                $scope.array = data;
+            });
     }]);
 
 controllers.controller('LandingCtrl', ['$scope', '$http', 
