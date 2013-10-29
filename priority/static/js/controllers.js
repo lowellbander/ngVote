@@ -16,6 +16,9 @@ controllers.controller('VoteCtrl', ['$scope', '$http',
             function(data) {
                 $scope.array = data;
             });
+        $scope.vote = function(index) {
+            $scope.array[index].count = $scope.array[index].count + 1;
+        };
     }]);
 
 controllers.controller('LandingCtrl', ['$scope', '$http', 
