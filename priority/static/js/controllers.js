@@ -4,6 +4,11 @@
 
 var controllers = angular.module('app.controllers', []);
 
+controllers.controller('VoteCtrl', [],
+    function ($scope) {
+        $scope.test = "test success!"
+    });
+
 controllers.controller('NavbarCtrl', ['$scope', '$http', '$location', 'Session',
     function ($scope, $http, $location, Session) {
         $scope.session = Session.session;
