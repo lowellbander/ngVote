@@ -4,8 +4,8 @@
 
 var controllers = angular.module('app.controllers', []);
 
-controllers.controller('VoteCtrl', ['$scope', '$http',
-    function ($scope, $http) {
+controllers.controller('VoteCtrl', ['$scope', '$http', 'Choices',
+    function ($scope, $http, Choices) {
         $scope.testval = "Sanity Check Complete";
         $scope.testArray = ["one", "blue", 'opera'];
         $http.get('static/data-json/single-object.json').success(
@@ -19,6 +19,10 @@ controllers.controller('VoteCtrl', ['$scope', '$http',
         $scope.vote = function(index) {
             $scope.array[index].count = $scope.array[index].count + 1;
         };
+        // $scope.myData = Choices.get({}, function () {
+
+        // });
+        $scope.myData = Choices.get();
     }]);
 
 controllers.controller('LandingCtrl', ['$scope', '$http', 
