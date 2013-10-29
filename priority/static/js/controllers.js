@@ -4,7 +4,7 @@
 
 var controllers = angular.module('app.controllers', []);
 
-controllers.controller('VoteCtrl', [],
+controllers.controller('VoteCtrl', ['$scope'],
     function ($scope) {
         $scope.test = "test success!"
     });
@@ -33,6 +33,8 @@ controllers.controller('TaskCtrl', ['$scope', '$log', '$modal', 'Task', 'Session
             $log.log('single...');
             $log.log(task);
         });
+
+        $scope.lowell = "bander";
 
         $scope.priority = 5;
         $scope.tasks = Task.all({}, function(data) {
