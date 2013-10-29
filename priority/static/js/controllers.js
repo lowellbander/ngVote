@@ -4,10 +4,9 @@
 
 var controllers = angular.module('app.controllers', []);
 
-controllers.controller('VoteCtrl', ['$scope'],
-    function ($scope) {
-        $scope.test = "test success!"
-    });
+controllers.controller('VoteCtrl', ['$scope', function ($scope) {
+        $scope.lowell = "test success!"
+    }]);
 
 controllers.controller('NavbarCtrl', ['$scope', '$http', '$location', 'Session',
     function ($scope, $http, $location, Session) {
