@@ -30,8 +30,12 @@ controllers.controller('VoteCtrl', ['$scope', '$http', 'Choices',
         $scope.myData = Choices.query();
     }]);
 
-controllers.controller('LandingCtrl', ['$scope', '$http', 
-    function ($scope, $http) {
+controllers.controller('LandingCtrl', ['$scope', '$http', 'Vote',
+    function ($scope, $http, Vote) {
+        $scope.majors = Vote.query();
+
+
+
         $scope.lowell = "test success!";
         $scope.subjects = [{
             "id" : 0,
@@ -44,9 +48,6 @@ controllers.controller('LandingCtrl', ['$scope', '$http',
            "id" : 2,
             "name" : "Physics" 
         }];
-        $scope.getURL = function(subject) {
-            return "/vote/:" + subject.id;
-        };
     }]);
 
 /////////////////////////////////

@@ -1,1 +1,37 @@
-[{},{},{}]
+[{
+	"name" : "Computer Science",
+	"id": 0,
+	"courses" : [{
+		"title" : "CS 31",
+		"votes" : 0
+	},{
+		"title" : "CS 32",
+		"votes" : 0
+	},{
+		"title" : "CS 35L",
+		"votes" : 0
+	}]
+},{
+	"name" : "Mathematics",
+	"id": 1,
+	"courses" : [{
+		"title" : "Math 31B",
+		"votes" : 0
+	},{
+		"title" : "Math 32A",
+		"votes" : 0
+	},{
+		"title" : "Math 32B",
+		"votes" : 0
+	}]
+},{
+	"name" : "Physics",
+	"id": 2,
+	"courses" : [{
+		"title" : "Physics 1A",
+		"votes" : 0
+	},{
+		"title" : "Physics 1B",
+		"votes" : 0
+	}]
+}]
