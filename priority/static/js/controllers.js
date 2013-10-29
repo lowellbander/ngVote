@@ -6,7 +6,8 @@ var controllers = angular.module('app.controllers', []);
 
 controllers.controller('VoteCtrl', ['$scope',
     function ($scope) {
-        $scope.testval = "Sanity Check Complete"
+        $scope.testval = "Sanity Check Complete";
+        $scope.testArray = ["one", "blue", 'opera'];
     }]);
 
 controllers.controller('LandingCtrl', ['$scope', '$http', 
