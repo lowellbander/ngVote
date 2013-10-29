@@ -4,10 +4,14 @@
 
 var controllers = angular.module('app.controllers', []);
 
-controllers.controller('VoteCtrl', ['$scope',
-    function ($scope) {
+controllers.controller('VoteCtrl', ['$scope', '$http',
+    function ($scope, $http) {
         $scope.testval = "Sanity Check Complete";
         $scope.testArray = ["one", "blue", 'opera'];
+        $http.get('static/data-json/single-object.json').success(
+            function(data) {
+                $scope.testObj = data;
+            });
     }]);
 
 controllers.controller('LandingCtrl', ['$scope', '$http', 
