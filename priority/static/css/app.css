@@ -1,0 +1,84 @@
+/* nav bar */
+.navbar-form {
+    padding-right: 0;
+    margin-right: -15px;
+}
+
+.navbar-form input {
+    width: 150px;
+}
+
+ul.navbar-nav button {
+    margin: 8px 0;
+}
+
+.navbar-spinner {
+    margin: 14px -40px 0 0;
+}
+
+a.user-menu img {
+    margin: -8px 10px -8px 0;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+}
+
+.open > a.user-menu img, a.user-menu:hover img {
+    border-color: #777;
+}
+
+/* tasks */
+
+button.add-task {
+    margin-bottom: 15px;
+}
+
+.task:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.priority-task {
+    padding: 20px 0 20px;
+}
+
+.priority-task .name {
+    font-size: 40px;
+    display: block;
+}
+
+.priority-task .position {
+    font-size: 90px;
+    line-height: 90px;
+    text-align: center;
+}
+
+.priority-task .date {
+    margin-left: 10px;
+    margin-top: -5px;
+}
+
+.priority-task .edit {
+    text-align: center;
+}
+
+.priority-task .edit button {
+    margin-top: 8px;
+    font-size: 40px;
+}
+
+.lesser-task {
+    padding: 5px 0;
+}
+
+.lesser-task .position, .lesser-task .edit {
+    text-align: center;
+}
+
+.lesser-task .owner, .lesser-task .date {
+    margin-left: 5px;
+}
+
+/* modal fix (http://blog.corveloper.com/2013/08/angularjs-with-ui-bootstrap-fix-dialog-boxes/) */ 
+
+.modal {
+    display: block;
+}
