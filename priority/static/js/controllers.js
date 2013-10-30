@@ -10,34 +10,7 @@ controllers.controller('VoteCtrl', ['$scope', '$http', '$routeParams', 'Choices'
             $scope.majorNum = Number($routeParams.pollid);
             $scope.thisMajor = $scope.majors[$scope.majorNum]["name"];
             $scope.courseList = $scope.majors[$scope.majorNum]["courses"];
-            // $scope.courses = $scope.majors[$scope.majorNum]courses
         }); // replace with get for a single major
-
-
-
-        //basic sanity checks
-        $scope.testval = "Sanity Check Complete";
-        $scope.testArray = ["one", "blue", 'opera'];
-        $http.get('static/data-json/single-object.json').success(
-            function(data) {
-                $scope.testObj = data;
-            });
-        $http.get('static/data-json/array.json').success(
-            function(data) {
-                $scope.array = data;
-            });
-        $scope.vote = function(index) {
-            $scope.array[index].count = $scope.array[index].count + 1;
-
-            $scope.myData[index].count = $scope.myData[index].count + 1;
-            //POST or PUT new count (probably the entire JSON obj tho)
-            //save() the single object
-            Choices.save($scope.myData[index]); //doesn't work, need a server that serves the JSON
-            /*   POST http://0.0.0.0:8000/static/data-json/array.json 405 (METHOD NOT ALLOWED)    */
-
-            //get() the updated object (necessary?)
-        };
-        $scope.myData = Choices.query();
     }]);
 
 controllers.controller('LandingCtrl', ['$scope', '$http', 'Vote',
