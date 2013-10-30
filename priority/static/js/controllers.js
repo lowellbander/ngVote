@@ -19,14 +19,15 @@ controllers.controller('VoteCtrl', ['$scope', '$http', '$routeParams', 'Vote',
         };
     }]);
 
-controllers.controller('LandingCtrl', ['$scope', '$http', 'Vote',
-    function ($scope, $http, Vote) {
-        $scope.majors = Vote.query();
+controllers.controller('LandingCtrl', ['$scope', '$http', 'Polls',
+    function ($scope, $http, Polls) {
+        $scope.majors = Polls.query();
     }]);
+
 // Josh's version
-controllers.controller('PollCtrl', ['$scope', '$http', 'Vote',
-    function ($scope, $http, Vote) {
-        $scope.polls = Poll.query(); // get all
+controllers.controller('PollCtrl', ['$scope', '$http', 'Polls',
+    function ($scope, $http, Polls) {
+        $scope.polls = Polls.query(); // get all
     }]);
 
 /////////////////////////////////

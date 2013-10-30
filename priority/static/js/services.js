@@ -31,3 +31,8 @@ services.factory('Vote', ['$resource',
     function ($resource) {
         return $resource('static/data-json/real.json');    
     }]);
+
+services.factory('Polls', ['$resource', 
+    function ($resource) {
+        return $resource('static/data-json/real.json');    
+    }]);

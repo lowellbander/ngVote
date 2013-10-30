@@ -16,7 +16,7 @@ app.value('ldapURI', '//jvillbrandt-ubuntu:8008');
 //app.value('taskURI', '//jvillbrandt-ubuntu:8007');
 
 app.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/home', {templateUrl: '/static/partials/landing-page.html', controller: 'LandingCtrl'});
+    $routeProvider.when('/home', {templateUrl: '/static/partials/landing-page.html', controller: 'PollCtrl'});
     $routeProvider.when('/vote/:pollid', {templateUrl: '/static/partials/vote.html', controller: 'VoteCtrl'});
     $routeProvider.otherwise({redirectTo: '/home'});
 }]);
