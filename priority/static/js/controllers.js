@@ -33,21 +33,6 @@ controllers.controller('VoteCtrl', ['$scope', '$http', 'Choices',
 controllers.controller('LandingCtrl', ['$scope', '$http', 'Vote',
     function ($scope, $http, Vote) {
         $scope.majors = Vote.query();
-
-
-
-        $scope.lowell = "test success!";
-        $scope.subjects = [{
-            "id" : 0,
-            "name" : "Computer Science"
-        },
-        {
-            "id" : 1,
-            "name" : "Mathematics"
-        },{
-           "id" : 2,
-            "name" : "Physics" 
-        }];
     }]);
 
 /////////////////////////////////
