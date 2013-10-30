@@ -4,8 +4,8 @@
 
 var controllers = angular.module('app.controllers', []);
 
-controllers.controller('VoteCtrl', ['$scope', '$http', 'Choices',
-    function ($scope, $http, Choices) {
+controllers.controller('VoteCtrl', ['$scope', '$http', '$routeParams', 'Choices', 'Vote',
+    function ($scope, $http, $routeParams, Choices, Vote) {
         $scope.testval = "Sanity Check Complete";
         $scope.testArray = ["one", "blue", 'opera'];
         $http.get('static/data-json/single-object.json').success(
