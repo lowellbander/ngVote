@@ -1,27 +1,8 @@
-<h1>Major #{{majorNum + 1}}</h1>
-<h1>Major = {{thisMajor}} </h1>
-<p>raw: {{majors}}</p>
-<ul><li ng-repeat="major in majors">{{major.name}}, {{$index}}</li></ul>
+<!-- <h1>Major #{{majorNum + 1}}</h1> -->
+<h1>Vote on your fav {{thisMajor}} class </h1>
+<!-- <p>raw: {{majors}}</p> -->
+<!-- <ul><li ng-repeat="major in majors">{{major.name}}, {{$index}}</li></ul> -->
+<!-- <p>raw: {{courseList}}</p> -->
+<ul><li ng-repeat="course in courseList">{{course.title}} (has {{course.votes}} votes)</li></ul>
 
-
-<br><br><br><br><br><br><br><br><br>
-<h1>basic sanity checks</h1>
-<h3>Testing: {{testval}}</h3>
-<h3>array repeat test</h3>
-<ul>
-	<li ng-repeat="str in testArray">{{str}}</li>
-</ul>
-<h3>single JSON obj $http.get() test</h3>
-<p>obj: {{testObj}}</p>
-<p>keyed val: {{testObj.name}}</p>
-<h3>array JSON get test</h3>
-<ul>
-	<li ng-repeat="item in array">{{item}}</li>
-	<li ng-repeat="item in array" ng-click="vote($index)">{{item.name}}</li>
-</ul>
-<h3>basic factory test</h3>
-<p>object: {{myData}}</p>
-<!-- <h4></h4> -->
-<ul>
-	<li ng-repeat="obj in myData" ng-click="vote($index)">{{obj}}</li>
-</ul>
+<!-- add a home button -->

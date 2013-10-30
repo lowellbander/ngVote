@@ -6,16 +6,16 @@ var controllers = angular.module('app.controllers', []);
 
 controllers.controller('VoteCtrl', ['$scope', '$http', '$routeParams', 'Choices', 'Vote',
     function ($scope, $http, $routeParams, Choices, Vote) {
-
         $scope.majors = Vote.query(function () {
             $scope.majorNum = Number($routeParams.pollid);
-            $scope.thisMajor = $scope.majors[$scope.majorNum]["name"]; // undefined obj. why's that? 
+            $scope.thisMajor = $scope.majors[$scope.majorNum]["name"];
+            $scope.courseList = $scope.majors[$scope.majorNum]["courses"];
+            // $scope.courses = $scope.majors[$scope.majorNum]courses
         }); // replace with get for a single major
-        // $scope.majorNum = Number($routeParams.pollid);
-        // $scope.thisMajor = $scope.majors[$scope.majorNum]; // undefined obj. why's that?
 
 
 
+        //basic sanity checks
         $scope.testval = "Sanity Check Complete";
         $scope.testArray = ["one", "blue", 'opera'];
         $http.get('static/data-json/single-object.json').success(
