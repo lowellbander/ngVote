@@ -4,9 +4,9 @@
 
 var controllers = angular.module('app.controllers', []);
 
-controllers.controller('VoteCtrl', ['$scope', '$http', '$routeParams', 'Vote',
-    function ($scope, $http, $routeParams, Vote) {
-        $scope.majors = Vote.query(function () {
+controllers.controller('VoteCtrl', ['$scope', '$http', '$routeParams', 'Polls',
+    function ($scope, $http, $routeParams, Polls) {
+        $scope.majors = Polls.query(function () {
             $scope.majorNum = Number($routeParams.pollid);
             $scope.thisMajor = $scope.majors[$scope.majorNum]["name"];
             $scope.courseList = $scope.majors[$scope.majorNum]["courses"];
@@ -19,12 +19,6 @@ controllers.controller('VoteCtrl', ['$scope', '$http', '$routeParams', 'Vote',
         };
     }]);
 
-controllers.controller('LandingCtrl', ['$scope', '$http', 'Polls',
-    function ($scope, $http, Polls) {
-        $scope.majors = Polls.query();
-    }]);
-
-// Josh's version
 controllers.controller('PollCtrl', ['$scope', '$http', 'Polls',
     function ($scope, $http, Polls) {
         $scope.polls = Polls.query(); // get all
