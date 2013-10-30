@@ -18,6 +18,10 @@ var tastypieDataTransformer = function ($http) {
     ])
 };
 
+//////////////////////////
+/// Lowell's Additions ///
+//////////////////////////
+
 services.factory('Choices', ['$resource',
     function ($resource) {
         return $resource('static/data-json/array.json');

@@ -4,18 +4,29 @@
 
 var controllers = angular.module('app.controllers', []);
 
-controllers.controller('VoteCtrl', ['$scope', '$http', '$routeParams', 'Choices', 'Vote',
-    function ($scope, $http, $routeParams, Choices, Vote) {
+controllers.controller('VoteCtrl', ['$scope', '$http', '$routeParams', 'Vote',
+    function ($scope, $http, $routeParams, Vote) {
         $scope.majors = Vote.query(function () {
             $scope.majorNum = Number($routeParams.pollid);
             $scope.thisMajor = $scope.majors[$scope.majorNum]["name"];
             $scope.courseList = $scope.majors[$scope.majorNum]["courses"];
         }); // replace with get for a single major
+        $scope.vote = function (index) {
+            $scope.majors[$scope.majorNum]["courses"][index]["votes"] = $scope.majors[$scope.majorNum]["courses"][index]["votes"] + 1
+            // verbose because I'm ignorant as to how POST/PUT works,
+            // so I figure I should start with something that references the original collection
+            // instead of creating a new object
+        };
     }]);
 
 controllers.controller('LandingCtrl', ['$scope', '$http', 'Vote',
     function ($scope, $http, Vote) {
         $scope.majors = Vote.query();
+    }]);
+// Josh's version
+controllers.controller('PollCtrl', ['$scope', '$http', 'Vote',
+    function ($scope, $http, Vote) {
+        $scope.polls = Poll.query(); // get all
     }]);
 
 /////////////////////////////////

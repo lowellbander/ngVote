@@ -1,4 +1,9 @@
-<h1>Vote on your fav {{thisMajor}} class </h1>
-<ul><li ng-repeat="course in courseList">{{course.title}} (has {{course.votes}} votes)</li></ul>
+<h1>what's the best {{thisMajor}} class? </h1>
+<ul><li ng-repeat="course in courseList" ng-click="vote($index)">{{course.title}} (has {{course.votes}} votes)</li></ul>
+<a href="/">Go home</a>
 
-<!-- add a home button -->
+<!-- TODO -->
+
+<!-- radiobutton + submit -->
+<!-- user must be logged in to vote (disable submit button otherwise) -->
+<!-- user can only vote once -->
